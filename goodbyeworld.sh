@@ -29,9 +29,13 @@ else
     echo "   \_/\_/  \___/|_____|_|    "
     echo
 
-    echo "This process will take almost 2.5hrs with 1170Mbps wi-fi"
+    echo "This process will take almost"
+    echo "-- 2.5hrs with 1170Mbps wi-fi"
+    echo "-- 1hr with 10G ethernet"
     yay -S --noconfirm librewolf
 
+    echo "timeout reading password?"
+    echo "Just execute this code twice!"
     echo "autoinstall of librewolf -- DONE"
 fi
 
