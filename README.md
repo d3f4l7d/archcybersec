@@ -1,2 +1,2 @@
-# werewolf
-Security-Prioritized Extra Install Guide for Arch System
+# Code Usage
+Just like this
