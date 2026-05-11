@@ -32,10 +32,17 @@ else
     echo "This process will take almost"
     echo "-- 2.5hrs with 1170Mbps wi-fi"
     echo "-- 1hr with 10G ethernet"
+    echo
     yay -S --noconfirm librewolf
-
+    echo
     echo "timeout reading password?"
     echo "Just execute this code twice!"
+    echo "Create /etc/xdg/autostart/wolfd.desktop for autostart."
+    echo "[Desktop Entry]"
+    echo "Name=wolfd"
+    echo "Exec=librewolf"
+    echo "Type=Application"
+    echo "Terminal=false"
     echo "autoinstall of librewolf -- DONE"
 fi
 
