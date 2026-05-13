@@ -59,6 +59,7 @@ else
     echo
 
     sudo pacman -S --noconfirm nmap
+    nmap --version
     echo "autoinstall of nmap -- DONE"
 fi
 
@@ -75,6 +76,7 @@ else
     echo
 
     sudo pacman -S --noconfirm tshark
+    tshark --version
     echo "autoinstall of tshark -- DONE"
 fi
 
