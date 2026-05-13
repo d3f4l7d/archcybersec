@@ -64,9 +64,8 @@ else
 fi
 
 
-if pacman -Q tshark &> /dev/null; then
-    echo "tshark is already installed. Skip SHARK process..."
-else
+if ! command -v tshark &> /dev/null
+then
     echo
     echo " ____  _   _    _    ____  _  __"
     echo "/ ___|| | | |  / \  |  _ \| |/ /"
@@ -78,10 +77,12 @@ else
     sudo pacman -S --noconfirm wireshark-cli
     tshark --version
     echo "autoinstall of tshark -- DONE"
+else
+    echo "tshark is already installed. Skip SHARK process..."
 fi
 
 
-if pacman -Q tshark &> /dev/null; then
+if pacman -Q john &> /dev/null; then
     echo "john is already installed. Skip JOHN process..."
 else
     echo
