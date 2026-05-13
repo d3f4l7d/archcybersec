@@ -109,8 +109,8 @@ then
     echo "/_/   \_\___|_| \_|"
     echo
 
-    sudo pacman -Sy base-devel libnl openssl ethtool util-linux zlib libpcap sqlite pcre2 hwloc cmocka hostapd wpa_supplicant tcpdump screen iw usbutils pciutils
-    wget https://download.aircrack-ng.org/aircrack-ng-1.7.tar.gz
+    sudo pacman -S --noconfirm base-devel libnl openssl ethtool util-linux zlib libpcap sqlite pcre2 hwloc cmocka hostapd wpa_supplicant tcpdump screen iw usbutils pciutils
+    wget https://download.aircrack-ng.org/aircrack-ng-1.7.tar.gz ~/.
     tar -zxvf aircrack-ng-1.7.tar.gz
     cd aircrack-ng-1.7
     autoreconf -i
