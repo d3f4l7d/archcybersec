@@ -12,4 +12,4 @@ Of course, we're BLUE, but when it turns to be RED, or still BLUE...
 > Any act of unauthorized access will violate the laws on your country (e.g., CFAA). Any of tools must be used on your own systems to enhance your system security. 
 
 ## License
-MIT License - see LICENSE file for more details.
+MIT License - see [LICENSE](/LICENSE) for more details.
