@@ -9,7 +9,7 @@ This will install an entire librewolf browser on your system.
 
 Of course, we're BLUE, but when it turns to be RED, or still BLUE...
 > [!WARNING]
-> Any act of unauthorized access will violate the laws on your country (e.g., CFAA). Any of tools must be used on your own systems to enhance your system security. 
+> Any act of unauthorized access will violate the laws on your country (e.g., CFAA). Any of tools here must be used on your own systems to enhance your system security. 
 
 ## License
 MIT License - see [LICENSE](/LICENSE) for more details.
