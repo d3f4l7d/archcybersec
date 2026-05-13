@@ -46,6 +46,7 @@ else
     echo "autoinstall of librewolf -- DONE"
 fi
 
+
 if pacman -Q nmap &> /dev/null; then
     echo "nmap is already installed. Skip NMAP process..."
 else
@@ -60,6 +61,23 @@ else
     sudo pacman -S --noconfirm nmap
     echo "autoinstall of nmap -- DONE"
 fi
+
+
+if pacman -Q tshark &> /dev/null; then
+    echo "tshark is already installed. Skip SHARK process..."
+else
+    echo
+    echo " ____  _   _    _    ____  _  __"
+    echo "/ ___|| | | |  / \  |  _ \| |/ /"
+    echo "\___ \| |_| | / _ \ | |_) | ' / "
+    echo " ___) |  _  |/ ___ \|  _ <| . \ "
+    echo "|____/|_| |_/_/   \_\_| \_\_|\_\"
+    echo
+
+    sudo pacman -S --noconfirm tshark
+    echo "autoinstall of tshark -- DONE"
+fi
+
 
 echo
 echo " ____  _         _                                        "
