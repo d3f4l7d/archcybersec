@@ -1,4 +1,4 @@
-# Usage
+## Usage
 Just execute like the below.
 ```
 ./goodbyeworld.sh
