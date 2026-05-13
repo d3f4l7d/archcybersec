@@ -9,7 +9,7 @@ This will install an entire librewolf browser on your system.
 
 Of course...
 > [!WARNING]
-> Any act of unauthorized access will violate the laws on your country (e.g., CFAA). Any of tools must be used on your own systems to enhance your system security (I do). 
+> Any act of unauthorized access will violate the laws on your country (e.g., CFAA). Any of tools must be used on your own systems to enhance your system security. 
 
 MIT License
 
