@@ -99,6 +99,8 @@ else
 fi
 
 
+sudo pacman -Sy base-devel libnl openssl ethtool util-linux zlib libpcap sqlite pcre2 hwloc cmocka hostapd wpa_supplicant tcpdump screen iw usbutils pciutils
+
 echo
 echo " ____  _         _                                        "
 echo "/ ___|(_) __   _(_)___   _ __   __ _  ___ ___ _ __ ___    "
