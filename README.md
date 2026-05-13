@@ -12,5 +12,4 @@ Of course...
 > Any act of unauthorized access will violate the laws on your country (e.g., CFAA). Any of tools must be used on your own systems to enhance your system security. 
 
 ## License
-MIT License
-Copyright (c) 2026 d3f4l7d
+MIT License - see LICENSE file for more details.
