@@ -99,7 +99,30 @@ else
 fi
 
 
-sudo pacman -Sy base-devel libnl openssl ethtool util-linux zlib libpcap sqlite pcre2 hwloc cmocka hostapd wpa_supplicant tcpdump screen iw usbutils pciutils
+if ! command -v aircrack-ng &> /dev/null
+then
+    echo
+    echo "    _    ___ ____  "
+    echo "   / \  |_ _|  _ \ "
+    echo "  / _ \  | || |_) |"
+    echo " / ___ \ | ||  _ < "
+    echo "/_/   \_\___|_| \_|"
+    echo
+
+    sudo pacman -Sy base-devel libnl openssl ethtool util-linux zlib libpcap sqlite pcre2 hwloc cmocka hostapd wpa_supplicant tcpdump screen iw usbutils pciutils
+    wget https://download.aircrack-ng.org/aircrack-ng-1.7.tar.gz
+    tar -zxvf aircrack-ng-1.7.tar.gz
+    cd aircrack-ng-1.7
+    autoreconf -i
+    ./configure --with-experimental
+    make
+    make install
+    ldconfig
+    echo "autoinstall of aircrack-ng -- DONE"
+else
+    echo "aircrack-ng is already installed. Skip AIR process..."
+fi
+
 
 echo
 echo " ____  _         _                                        "
