@@ -7,7 +7,7 @@ Just execute like the below.
 > WOLF process will take so long time, like 1-2.5hrs depends on your connection quality.
 
 > [!WARNING]
-> It's quite obvious, and I even don't think a declaration is needed. But any sort of unauthorized access will violate the laws on your country (e.g., CFAA). Any of tools below the WOLF process must be used on your own systems to check its security (I do). 
+> Any act of unauthorized access will violate the laws on your country (e.g., CFAA; It's quite obvious, and I even don't think a declaration is needed). Any of tools below the WOLF process must be used on your own systems to check its security (I do). 
 
 MIT License
 
