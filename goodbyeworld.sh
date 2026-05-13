@@ -94,8 +94,7 @@ else
     echo
 
     sudo pacman -S --noconfirm john
-    john --version
-    echo "autoinstall of tshark -- DONE"
+    echo "autoinstall of john -- DONE"
 fi
 
 
