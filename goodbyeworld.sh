@@ -75,7 +75,7 @@ else
     echo "|____/|_| |_/_/   \_\_| \_\_|\_|"
     echo
 
-    sudo pacman -S --noconfirm tshark
+    sudo pacman -S --noconfirm wireshark-cli
     tshark --version
     echo "autoinstall of tshark -- DONE"
 fi
