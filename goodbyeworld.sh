@@ -81,6 +81,23 @@ else
 fi
 
 
+if pacman -Q tshark &> /dev/null; then
+    echo "john is already installed. Skip JOHN process..."
+else
+    echo
+    echo "     _  ___  _   _ _   _ "
+    echo "    | |/ _ \| | | | \ | |"
+    echo " _  | | | | | |_| |  \| |"
+    echo "| |_| | |_| |  _  | |\  |"
+    echo " \___/ \___/|_| |_|_| \_|"
+    echo
+
+    sudo pacman -S --noconfirm john
+    john --version
+    echo "autoinstall of tshark -- DONE"
+fi
+
+
 echo
 echo " ____  _         _                                        "
 echo "/ ___|(_) __   _(_)___   _ __   __ _  ___ ___ _ __ ___    "
