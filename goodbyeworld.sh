@@ -94,6 +94,7 @@ else
     echo
 
     sudo pacman -S --noconfirm john
+    john -h
     echo "autoinstall of john -- DONE"
 fi
 
