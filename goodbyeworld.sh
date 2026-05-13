@@ -15,7 +15,7 @@ echo "|_| |_|\___/  |_|  \__,_|_|   \__|_| |_|\___|_(_)                     "
 echo
 
 
-sudo pacman -Syu --noconfirm
+sudo pacman -Syuu
 
 
 if pacman -Q librewolf &> /dev/null; then
@@ -46,3 +46,17 @@ else
     echo "autoinstall of librewolf -- DONE"
 fi
 
+if pacman -Q nmap &> /dev/null; then
+    echo "nmap is already installed. Skip NMAP process..."
+else
+    echo
+    echo " _   _ __  __    _    ____  "
+    echo "| \ | |  \/  |  / \  |  _ \ "
+    echo "|  \| | |\/| | / _ \ | |_) |"
+    echo "| |\  | |  | |/ ___ \|  __/ "
+    echo "|_| \_|_|  |_/_/   \_\_|    "
+    echo
+
+    sudo pacman -S --noconfirm nmap
+    echo "autoinstall of nmap -- DONE"
+fi
