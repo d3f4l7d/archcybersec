@@ -98,45 +98,6 @@ else
     echo "autoinstall of john -- DONE"
 fi
 
-
-if ! command -v aircrack-ng &> /dev/null
-then
-    echo
-    echo "    _    ___ ____  "
-    echo "   / \  |_ _|  _ \ "
-    echo "  / _ \  | || |_) |"
-    echo " / ___ \ | ||  _ < "
-    echo "/_/   \_\___|_| \_|"
-    echo
-
-    echo "Currently, AIR process won't work properly. Skip AIR process..."
-    exit
-    sudo pacman -S --noconfirm base-devel libnl openssl ethtool util-linux zlib libpcap sqlite pcre2 hwloc cmocka hostapd wpa_supplicant tcpdump screen iw usbutils pciutils
-    
-    git clone https://github.com/aircrack-ng/aircrack-ng ~/.config/aircrack-ng-git/
-    cd ~/.config/aircrack-ng-git/
-    autoreconf -i
-    ./configure --with-experimental
-    make
-    make install
-    ldconfig
-
-    mkdir ~/.config/aircrack-ng
-    wget -O ~/.config/aircrack-ng/aircrack-ng-1.7.tar.gz https://download.aircrack-ng.org/aircrack-ng-1.7.tar.gz
-    tar -zxvf ~/.config/aircrack-ng/aircrack-ng-1.7.tar.gz -C ~/.config/aircrack-ng/
-    cd ~/.config/aircrack-ng/aircrack-ng-1.7
-    autoreconf -i
-    ./configure --with-experimental
-    make
-    sudo make install
-    sudo ldconfig
-
-    echo "autoinstall of aircrack-ng -- DONE"
-else
-    echo "aircrack-ng is already installed. Skip AIR process..."
-fi
-
-
 echo
 echo " ____  _         _                                        "
 echo "/ ___|(_) __   _(_)___   _ __   __ _  ___ ___ _ __ ___    "
