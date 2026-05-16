@@ -109,7 +109,7 @@ then
     echo "/_/   \_\___|_| \_|"
     echo
 
-    sudo pacman -S --noconfirm aircrack-ng rfkill base-devel libnl openssl ethtool util-linux zlib libpcap sqlite pcre2 hwloc cmocka hostapd wpa_supplicant tcpdump screen iw usbutils pciutils expect
+    sudo pacman -S --noconfirm aircrack-ng base-devel libnl openssl ethtool util-linux zlib libpcap sqlite pcre2 hwloc cmocka hostapd wpa_supplicant tcpdump screen iw usbutils pciutils expect
     aircrack-ng
     echo "autoinstall of aircrack-ng -- DONE"
 else
