@@ -99,24 +99,6 @@ else
 fi
 
 
-if ! command -v aircrack-ng &> /dev/null
-then
-    echo
-    echo "    _    ___ ____  "
-    echo "   / \  |_ _|  _ \ "
-    echo "  / _ \  | || |_) |"
-    echo " / ___ \ | ||  _ < "
-    echo "/_/   \_\___|_| \_|"
-    echo
-
-    sudo pacman -S --noconfirm aircrack-ng base-devel libnl openssl ethtool util-linux zlib libpcap sqlite pcre2 hwloc cmocka hostapd wpa_supplicant tcpdump screen iw usbutils pciutils expect
-    aircrack-ng
-    echo "autoinstall of aircrack-ng -- DONE"
-else
-    echo "aircrack-ng is already installed. Skip AIR process..."
-fi
-
-
 echo
 echo " ____  _         _                                        "
 echo "/ ___|(_) __   _(_)___   _ __   __ _  ___ ___ _ __ ___    "
