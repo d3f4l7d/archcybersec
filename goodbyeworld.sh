@@ -119,7 +119,7 @@ then
     cd ~/.config/air/rtw89/
     sudo dkms install $PWD
     sudo make install_fw
-    sudo cp -vf rtw89.conf /etc/modprobe.d/
+    sudo cp rtw89.conf /etc/modprobe.d/
     sudo dkms status rtw89
 
     lsusb
