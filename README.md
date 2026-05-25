@@ -15,7 +15,7 @@ Just execute like the below.
 ```
 ./goodbyeworld.sh
 ```
-This will install an entire librewolf browser on your system.
+WOLF will install an entire librewolf browser on your system.
 > [!WARNING]
 > WOLF process will take 1-2.5hrs for its compiling depends on your connection quality.
 
