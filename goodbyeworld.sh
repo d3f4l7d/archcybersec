@@ -112,9 +112,12 @@ then
     echo "Currently, AIR section is under development. "
     echo "So this is the end of this sh for now."
     exit
-    
-    sudo pacman -S --noconfirm dkms bc
 
+    git clone https://aur.archlinux.org/rtw89-dkms-git.git ~/.config/air/rtw89-dkms-git
+    cd ~/.config/air/rtw89-dkms-git
+    makepkg -sirc
+    cd
+    sudo pacman -S --noconfirm dkms bc
     
     sudo pacman -S --noconfirm base-devel libnl openssl ethtool util-linux zlib libpcap sqlite pcre2 hwloc cmocka hostapd wpa_supplicant tcpdump screen iw usbutils pciutils expect
     git clone https://github.com/aircrack-ng/aircrack-ng ~/.config/aircrack-ng/
