@@ -99,6 +99,40 @@ else
 fi
 
 
+if ! command -v airmon-ng &> /dev/null
+then
+    echo
+    echo "    _    ___ ____  "
+    echo "   / \  |_ _|  _ \ "
+    echo "  / _ \  | || |_) |"
+    echo " / ___ \ | ||  _ < "
+    echo "/_/   \_\___|_| \_|"
+    echo
+    
+    echo "Currently, AIR section is under development. "
+    echo "So this is the end of this sh for now."
+    exit
+    
+    sudo pacman -S --noconfirm dkms bc
+
+    
+    sudo pacman -S --noconfirm base-devel libnl openssl ethtool util-linux zlib libpcap sqlite pcre2 hwloc cmocka hostapd wpa_supplicant tcpdump screen iw usbutils pciutils expect
+    git clone https://github.com/aircrack-ng/aircrack-ng ~/.config/aircrack-ng/
+    cd ~/.config/aircrack-ng/
+    env NOCONFIGURE=1 ./autogen.sh
+    ./configure --with-experimental
+    make
+    make check
+    sudo make integration
+    sudo make install
+    sudo ldconfig /usr/local/lib/
+    aircrack-ng
+    echo "autoinstall of airmon-ng -- DONE"
+else
+    echo "airmon-ng is already installed. Skip AIR process..."
+fi
+
+
 echo
 echo " ____  _         _                                        "
 echo "/ ___|(_) __   _(_)___   _ __   __ _  ___ ___ _ __ ___    "
