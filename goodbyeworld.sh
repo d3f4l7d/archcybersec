@@ -116,6 +116,7 @@ then
     sudo pacman -S --noconfirm dkms bc
     git clone https://github.com/lwfinger/rtw88 ~/.config/air/rtw88/
     cd ~/.config/air/rtw88/
+    sudo make cleanup_target_system
     sudo dkms install $PWD
     sudo make install_fw
     sudo cp -vf rtw88.conf /etc/modprobe.d/
@@ -129,9 +130,8 @@ then
     sudo cp -vf rtw89.conf /etc/modprobe.d/
     sudo dkms status rtw89
 
+    lsusb
 
-
-    
     sudo pacman -S --noconfirm base-devel libnl openssl ethtool util-linux zlib libpcap sqlite pcre2 hwloc cmocka hostapd wpa_supplicant tcpdump screen iw usbutils pciutils expect
     git clone https://github.com/aircrack-ng/aircrack-ng ~/.config/aircrack-ng/
     cd ~/.config/aircrack-ng/
