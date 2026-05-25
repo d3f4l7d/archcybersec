@@ -114,21 +114,19 @@ then
     exit
 
     sudo pacman -S --noconfirm dkms bc
-    
-    echo
-    echo "  ___   ___ ____ ____   ____ _   _ "
-    echo " ( _ ) ( _ ) ___|___ \ / ___| | | |"
-    echo " / _ \ / _ \___ \ __) | |   | | | |"
-    echo "| (_) | (_) |__) / __/| |___| |_| |"
-    echo " \___/ \___/____/_____|\____|\___/ "
-    echo
+    git clone https://github.com/lwfinger/rtw88 ~/.config/air/rtw88/
+    cd ~/.config/air/rtw88/
+    sudo dkms install $PWD
+    sudo make install_fw
+    sudo cp -vf rtw88.conf /etc/modprobe.d/
+    sudo dkms status rtw88/
     
     git clone https://github.com/morrownr/rtw89 ~/.config/air/rtw89/
     cd ~/.config/air/rtw89/
     sudo make cleanup_target_system
     udo dkms install $PWD
     sudo make install_fw
-    sudo cp -v rtw89.conf /etc/modprobe.d/
+    sudo cp -vf rtw89.conf /etc/modprobe.d/
     sudo dkms status rtw89
 
 
