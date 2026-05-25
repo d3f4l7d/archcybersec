@@ -113,11 +113,15 @@ then
     echo "So this is the end of this sh for now."
     exit
 
-    git clone https://aur.archlinux.org/rtw89-dkms-git.git ~/.config/air/rtw89-dkms-git
-    cd ~/.config/air/rtw89-dkms-git
-    makepkg -sirc
-    cd
     sudo pacman -S --noconfirm dkms bc
+    echo "Install driver for rtl8852cu"
+    git clone https://github.com/morrownr/rtw89 ~/.config/air/rtw89/
+    cd ~/.config/air/rtw89/
+    sudo make cleanup_target_system
+    udo dkms install $PWD
+    sudo make install_fw
+    sudo cp -v rtw89.conf /etc/modprobe.d/
+    sudo dkms status rtw89
     
     sudo pacman -S --noconfirm base-devel libnl openssl ethtool util-linux zlib libpcap sqlite pcre2 hwloc cmocka hostapd wpa_supplicant tcpdump screen iw usbutils pciutils expect
     git clone https://github.com/aircrack-ng/aircrack-ng ~/.config/aircrack-ng/
