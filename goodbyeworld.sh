@@ -114,7 +114,15 @@ then
     exit
 
     sudo pacman -S --noconfirm dkms bc
-    echo "Install driver for rtl8852cu"
+    
+    echo
+    echo "  ___   ___ ____ ____   ____ _   _ "
+    echo " ( _ ) ( _ ) ___|___ \ / ___| | | |"
+    echo " / _ \ / _ \___ \ __) | |   | | | |"
+    echo "| (_) | (_) |__) / __/| |___| |_| |"
+    echo " \___/ \___/____/_____|\____|\___/ "
+    echo
+    
     git clone https://github.com/morrownr/rtw89 ~/.config/air/rtw89/
     cd ~/.config/air/rtw89/
     sudo make cleanup_target_system
@@ -122,6 +130,9 @@ then
     sudo make install_fw
     sudo cp -v rtw89.conf /etc/modprobe.d/
     sudo dkms status rtw89
+
+
+
     
     sudo pacman -S --noconfirm base-devel libnl openssl ethtool util-linux zlib libpcap sqlite pcre2 hwloc cmocka hostapd wpa_supplicant tcpdump screen iw usbutils pciutils expect
     git clone https://github.com/aircrack-ng/aircrack-ng ~/.config/aircrack-ng/
