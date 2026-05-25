@@ -99,7 +99,7 @@ else
 fi
 
 
-if ! command -v airmon-ng &> /dev/null
+if ! command -v aircrack-ng &> /dev/null
 then
     echo
     echo "    _    ___ ____  "
@@ -109,10 +109,6 @@ then
     echo "/_/   \_\___|_| \_|"
     echo
     
-    echo "Currently, AIR section is under development. "
-    echo "So this is the end of this sh for now."
-    exit
-
     sudo pacman -S --noconfirm dkms bc
     git clone https://github.com/lwfinger/rtw88 ~/.config/air/rtw88/
     cd ~/.config/air/rtw88/
@@ -131,21 +127,13 @@ then
     sudo dkms status rtw89
 
     lsusb
+    nmcli device status
 
-    sudo pacman -S --noconfirm base-devel libnl openssl ethtool util-linux zlib libpcap sqlite pcre2 hwloc cmocka hostapd wpa_supplicant tcpdump screen iw usbutils pciutils expect
-    git clone https://github.com/aircrack-ng/aircrack-ng ~/.config/aircrack-ng/
-    cd ~/.config/aircrack-ng/
-    env NOCONFIGURE=1 ./autogen.sh
-    ./configure --with-experimental
-    make
-    make check
-    sudo make integration
-    sudo make install
-    sudo ldconfig /usr/local/lib/
-    aircrack-ng
-    echo "autoinstall of airmon-ng -- DONE"
+    sudo pacman -S --noconfirm libnl openssl ethtool util-linux zlib libpcap sqlite pcre2 hwloc cmocka hostapd tcpdump screen usbutils pciutils expect aircrack-ng
+    aircrack-ng --help
+    echo "autoinstall of aircrack-ng -- DONE"
 else
-    echo "airmon-ng is already installed. Skip AIR process..."
+    echo "aircrack-ng is already installed. Skip AIR process..."
 fi
 
 
