@@ -8,9 +8,9 @@ There're various IEEE 802.11 (Wi-Fi) WNIC (Wireless Network Interface Controller
 So now, I'm only testing just a few 'modern' (2021.11~) models as shown below.
 
 1. Buffalo WI-U3-2400XE2 [2024.02~] (chipset: RTL8852CU)
-   > [morrownr's RTW89](https://github.com/morrownr/rtw89) is under testing...
+> [morrownr's RTW89](https://github.com/morrownr/rtw89) is under testing...
 2. Buffalo WI-U3-866DHP [2024.10~] (chipset: RTL8812BU, still testing)
-
+> [morrownr's RTW88](https://github.com/morrownr/rtw88) is under testing...
 3. Buffalo WI-U3-1200AX2 [2021.11~] (chipset: RTL8852AU, still testing)
 
 
