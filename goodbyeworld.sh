@@ -114,6 +114,7 @@ then
     cd ~/.config/air/rtw88-dkms-git/
     makepkg -sirc
     cd
+    sudo dkms status rtw88
     
     git clone https://github.com/morrownr/rtw89 ~/.config/air/rtw89/
     cd ~/.config/air/rtw89/
@@ -121,9 +122,6 @@ then
     sudo make install_fw
     sudo cp rtw89.conf /etc/modprobe.d/
     sudo dkms status rtw89
-
-    lsusb
-    nmcli device status
 
     sudo pacman -S --noconfirm libnl openssl ethtool util-linux zlib libpcap sqlite pcre2 hwloc cmocka hostapd tcpdump screen usbutils pciutils expect aircrack-ng
     aircrack-ng --help
