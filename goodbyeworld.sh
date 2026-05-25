@@ -110,12 +110,10 @@ then
     echo
     
     sudo pacman -S --noconfirm dkms bc
-    git clone https://github.com/lwfinger/rtw88 ~/.config/air/rtw88/
-    cd ~/.config/air/rtw88/
-    sudo dkms install $PWD
-    sudo make install_fw
-    sudo cp -vf rtw88.conf /etc/modprobe.d/
-    sudo dkms status rtw88/
+    git clone https://aur.archlinux.org/rtw88-dkms-git.git ~/.config/air/rtw88-dkms-git/
+    cd ~/.config/air/rtw88-dkms-git/
+    makepkg -sirc
+    cd
     
     git clone https://github.com/morrownr/rtw89 ~/.config/air/rtw89/
     cd ~/.config/air/rtw89/
