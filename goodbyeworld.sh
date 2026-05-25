@@ -112,7 +112,6 @@ then
     sudo pacman -S --noconfirm dkms bc
     git clone https://github.com/lwfinger/rtw88 ~/.config/air/rtw88/
     cd ~/.config/air/rtw88/
-    sudo make cleanup_target_system
     sudo dkms install $PWD
     sudo make install_fw
     sudo cp -vf rtw88.conf /etc/modprobe.d/
@@ -120,8 +119,7 @@ then
     
     git clone https://github.com/morrownr/rtw89 ~/.config/air/rtw89/
     cd ~/.config/air/rtw89/
-    sudo make cleanup_target_system
-    udo dkms install $PWD
+    sudo dkms install $PWD
     sudo make install_fw
     sudo cp -vf rtw89.conf /etc/modprobe.d/
     sudo dkms status rtw89
