@@ -8,11 +8,11 @@ There're various IEEE 802.11 (Wi-Fi) WNIC (Wireless Network Interface Controller
 So now, I'm only testing just a few 'modern' (2021.11~) models as shown below.
 
 
-### 1. Buffalo WI-U3-1200AX2 [2021.11~]
+### 1. Buffalo *WI-U3-1200AX2* [2021.11~]
 > RTL8852AU chipset, which has successfully deployed locally with [this driver](https://github.com/morrownr/rtw89).
-### 2. Buffalo WI-U3-2400XE2 [2024.02~] <***Most Straightforward USB Adaptor***>
+### 2. Buffalo *WI-U3-2400XE2* [2024.02~]
 > RTL8852CU chipset, which has successfully deployed locally with [this driver](https://github.com/morrownr/rtw89).
-### 3. Buffalo WI-U3-866DHP [2024.10~]
+### 3. Buffalo *WI-U3-866DHP* [2024.10~]
 > RTL8812BU chipset, which has successfully deployed locally with [this driver](https://github.com/lwfinger/rtw88).
 
 
