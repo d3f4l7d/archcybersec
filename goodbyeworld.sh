@@ -18,6 +18,24 @@ echo
 sudo pacman -Syuu
 
 
+if ! command -v ufw &> /dev/null
+then
+    echo
+    echo " _____ ___ ____  _____ "
+    echo "|  ___|_ _|  _ \| ____|"
+    echo "| |_   | || |_) |  _|  "
+    echo "|  _|  | ||  _ <| |___ "
+    echo "|_|   |___|_| \_\_____|"
+    echo
+
+    sudo pacman -S --noconfirm openssh ufw xorg
+    sudo systemctl start sshd && sudo systemctl start ufw
+    sudo systemctl enable sshd && sudo systemctl enable ufw
+else
+    echo "ufw is already installed. Skip SEC process..."
+fi
+
+
 if pacman -Q librewolf &> /dev/null; then
     echo "librewolf is already installed. Skip WOLF process..."
 else
