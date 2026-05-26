@@ -12,7 +12,7 @@ So now, I'm only testing just a few 'modern' (2021.11~) models as shown below.
 > RTL8852AU chipset, which has successfully deployed locally with [this driver](https://github.com/morrownr/rtw89).
 ### 2. Buffalo WI-U3-2400XE2 [2024.02~]
 > RTL8852CU chipset, which has successfully deployed locally with [this driver](https://github.com/morrownr/rtw89).
-### 3. Buffalo WI-U3-866DHP [2024.10~] (chipset: RTL8812BU)
+### 3. Buffalo WI-U3-866DHP [2024.10~]
 > RTL8812BU chipset, which has successfully deployed locally with [this driver](https://github.com/lwfinger/rtw88).
 
 
