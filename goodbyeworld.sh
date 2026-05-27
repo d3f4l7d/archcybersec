@@ -177,7 +177,6 @@ then
     sudo systemctl enable postgresql
     sudo -Hiu postgres createuser msf -P -S -R -D
     sudo -Hiu postgres createdb -O msf msf
-
     git clone https://github.com/rapid7/metasploit-framework.git ~/.config/msf/
     cd ~/.config/msf/
     gem install wirble sqlite3 bundler
