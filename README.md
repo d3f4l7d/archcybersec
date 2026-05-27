@@ -1,5 +1,14 @@
 ## Introduction
-This repository will give you another "lazy" way to install some fundamental programs for my Arch Linux security usage. Those codes below will automatically install some softwares by just executing codes. 
+This repository will give you another "lazy" way to install some fundamental programs for my Arch Linux security usage. Those codes below will automatically install some softwares by just executing codes. This code will automatically install these programs below:
+1. openssh
+2. ufw
+3. xorg (all reccommended)
+4. librewolf
+5. nmap
+6. wireshark-cli
+7. john the ripper
+8. aircrack-ng family
+9. metasploit framework (under development)
 ## Before Inception
 ### Legal
 Of course, we're BLUE, but when it turns to be RED, or still BLUE...
