@@ -1,5 +1,7 @@
 ## Introduction
-This repository will give you another "lazy" way to install some fundamental programs for my Arch Linux security usage. Those codes below will automatically install some softwares by just executing codes. This code will automatically install these programs below:
+This repository will give you another "lazy" way to install some fundamental programs for my Arch Linux security usage. This code will automatically install some softwares below by just executing it.
+The list of included programs:
+`goodbyeworld.sh`
 1. openssh
 2. ufw
 3. xorg (all reccommended)
