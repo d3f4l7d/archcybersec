@@ -149,6 +149,30 @@ else
 fi
 
 
+if ! command -v msfconsole &> /dev/null
+then
+    echo
+    echo " __  __ ____  _____ "
+    echo "|  \/  / ___||  ___|"
+    echo "| |\/| \___ \| |_   "
+    echo "| |  | |___) |  _|  "
+    echo "|_|  |_|____/|_|    "
+    echo
+    
+    echo "Currently, this section is under development. skipped for now"
+    exit
+    
+    sudo pacman -S --noconfirm ruby ruby-rdoc
+
+    
+    
+    msfconsole -h
+    echo "autoinstall of metasploit -- DONE"
+else
+    echo "metasploit is already installed. Skip MSF process..."
+fi
+
+
 echo
 echo " ____  _         _                                        "
 echo "/ ___|(_) __   _(_)___   _ __   __ _  ___ ___ _ __ ___    "
