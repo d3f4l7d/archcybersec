@@ -164,7 +164,13 @@ then
     
     sudo pacman -S --noconfirm ruby ruby-rdoc
     gpg --keyserver keyserver.ubuntu.com --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-    
+    wget -O /.config/rvm/rvm.sh https://get.rvm.io
+    cd /.config/rvm
+    sh rvm.sh stable
+    echo "source ~/.rvm/scripts/rvm" >> ~/.zshrc
+    source ~/.rvm/scripts/rvm
+    rvm install 3.8.8
+    rvm use 3.8.8 --default
 
     git clone https://github.com/rapid7/metasploit-framework.git ~/.config/msf/
     cd ~/.config/msf/
