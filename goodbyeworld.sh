@@ -180,7 +180,21 @@ then
 
     git clone https://github.com/rapid7/metasploit-framework.git ~/.config/msf/
     cd ~/.config/msf/
-    
+    gem install wirble sqlite3 bundler
+    bundle install
+    sudo touch /opt/metasploit/config/database.yml
+    echo 'production:' | sudo tee -a /opt/metasploit/config/database.yml
+    echo ' adapter: postgresql' | sudo tee -a /opt/metasploit/config/database.yml
+    echo ' database: msf' | sudo tee -a /opt/metasploit/config/database.yml
+    echo ' username: msf' | sudo tee -a /opt/metasploit/config/database.yml
+    echo ' password: msf' | sudo tee -a /opt/metasploit/config/database.yml
+    echo ' host: 127.0.0.1' | sudo tee -a /opt/metasploit/config/database.yml
+    echo ' port: 5432' | sudo tee -a /opt/metasploit/config/database.yml
+    echo ' pool: 75' | sudo tee -a /opt/metasploit/config/database.yml
+    echo ' timeout: 5' | sudo tee -a /opt/metasploit/config/database.yml
+    sudo sh -c "echo export MSF_DATABASE_CONFIG=/opt/metasploit/config/database.yml >> /etc/profile"
+    sudo chown -R $USER:users /opt/metasploit
+    ./msfconsole
     msfconsole -h
     echo "autoinstall of metasploit -- DONE"
 else
