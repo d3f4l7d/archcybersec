@@ -7,7 +7,7 @@ This repository will give you another "lazy" way to install some fundamental pro
 5. nmap
 6. wireshark-cli
 7. john the ripper
-8. aircrack-ng family
+8. aircrack-ng family (w/ rtw88 && rtw89)
 9. metasploit framework (under development)
 ## Before Inception
 ### Legal
