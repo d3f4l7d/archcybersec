@@ -164,7 +164,8 @@ then
     
     sudo pacman -S --noconfirm ruby ruby-rdoc
 
-    
+    git clone https://github.com/rapid7/metasploit-framework.git ~/.config/msf/
+    cd ~/.config/msf/
     
     msfconsole -h
     echo "autoinstall of metasploit -- DONE"
