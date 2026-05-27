@@ -1,3 +1,5 @@
+## Introduction
+This repository will give you another "lazy" way to install some fundamental programs for my Arch Linux security usage. Those codes below will automatically install some softwares by just executing codes. 
 ## Before Inception
 ### Legal
 Of course, we're BLUE, but when it turns to be RED, or still BLUE...
