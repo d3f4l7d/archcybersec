@@ -173,8 +173,8 @@ then
     rvm use 3.8.8 --default
     sudo chown -R postgres:postgres /var/lib/postgres/
     sudo -Hiu postgres initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'
-   sudo systemctl start postgresql
-   sudo systemctl enable postgresql
+    sudo systemctl start postgresql
+    sudo systemctl enable postgresql
 
 
     git clone https://github.com/rapid7/metasploit-framework.git ~/.config/msf/
