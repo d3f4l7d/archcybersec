@@ -182,15 +182,9 @@ then
     source ~/.rvm/scripts/rvm
     rvm install 3.3.8
     rvm use 3.3.8 --default
-    
-    wget -O /.config/rvm/rvm.sh https://get.rvm.io
-    cd /.config/rvm
-    sh rvm.sh stable
-    echo "source ~/.rvm/scripts/rvm" >> ~/.zshrc
-    source ~/.rvm/scripts/rvm
-    rvm install 3.8.8
-    rvm use 3.8.8 --default
     sudo chown -R postgres:postgres /var/lib/postgres/
+
+
     sudo -Hiu postgres initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'
     sudo systemctl start postgresql
     sudo systemctl enable postgresql
