@@ -30,7 +30,7 @@ This repository will give you another "lazy" way to install some fundamental pro
 ## Usage
 Just execute like the below.
 ```
-./goodbyeworld.sh 2>&1 | tee ~/.d3f4l7d/warewolf/log/goodbyeworld_stdouterr.txt
+./goodbyeworld.sh 2>&1 | tee goodbyeworld_stdouterr.txt
 ```
 WOLF will install an entire librewolf browser on your system.
 > [!WARNING]
