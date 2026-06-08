@@ -186,10 +186,9 @@ then
     sudo -Hiu postgres initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'
     sudo systemctl start postgresql
     sudo systemctl enable postgresql
-    sudo -Hiu postgres createuser <username> -P -S -R -D
+    sudo -Hiu postgres createuser <ownername> -P -S -R -D
+    sudo -Hiu postgres createdb -O <ownername> <dbname>
 
-    sudo -Hiu postgres createuser msf -P -S -R -D
-    sudo -Hiu postgres createdb -O msf msf
     git clone https://github.com/rapid7/metasploit-framework.git ~/.config/msf/
     cd ~/.config/msf/
     gem install wirble sqlite3 bundler
