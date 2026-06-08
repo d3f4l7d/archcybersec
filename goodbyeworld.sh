@@ -193,17 +193,19 @@ then
     gem install wirble sqlite3 bundler
     bundle install
     sudo touch ~/.config/metasploit-framework/config/database.yml
+    echo 'production:' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
+    echo ' adapter: postgresql' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
+    echo ' database: <dbname>' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
+    echo ' username: <ownername>' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
+    echo ' password: <passwd>' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
+    echo ' host: 127.0.0.1' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
+    echo ' port: 5432' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
+    echo ' pool: 75' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
+    echo ' timeout: 3' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
+    sudo sh -c "echo export MSF_DATABASE_CONFIG=~/.config/metasploit-framework/config/database.yml >> /etc/profile"
+    source /etc/profile
 
-    echo 'production:' | sudo tee -a /opt/metasploit/config/database.yml
-    echo ' adapter: postgresql' | sudo tee -a /opt/metasploit/config/database.yml
-    echo ' database: msf' | sudo tee -a /opt/metasploit/config/database.yml
-    echo ' username: msf' | sudo tee -a /opt/metasploit/config/database.yml
-    echo ' password: msf' | sudo tee -a /opt/metasploit/config/database.yml
-    echo ' host: 127.0.0.1' | sudo tee -a /opt/metasploit/config/database.yml
-    echo ' port: 5432' | sudo tee -a /opt/metasploit/config/database.yml
-    echo ' pool: 75' | sudo tee -a /opt/metasploit/config/database.yml
-    echo ' timeout: 5' | sudo tee -a /opt/metasploit/config/database.yml
-    sudo sh -c "echo export MSF_DATABASE_CONFIG=/opt/metasploit/config/database.yml >> /etc/profile"
+    
     sudo chown -R $USER:users /opt/metasploit
     ./msfconsole
     msfconsole -h
