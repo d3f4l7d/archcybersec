@@ -183,11 +183,11 @@ then
     rvm install 3.3.8
     rvm use 3.3.8 --default
     sudo chown -R postgres:postgres /var/lib/postgres/
-
-
     sudo -Hiu postgres initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'
     sudo systemctl start postgresql
     sudo systemctl enable postgresql
+    sudo -Hiu postgres createuser <username> -P -S -R -D
+
     sudo -Hiu postgres createuser msf -P -S -R -D
     sudo -Hiu postgres createdb -O msf msf
     git clone https://github.com/rapid7/metasploit-framework.git ~/.config/msf/
