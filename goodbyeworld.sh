@@ -178,6 +178,10 @@ then
     sudo pacman -S --noconfirm ruby ruby-rdoc postgresql
     curl -sSL https://rvm.io/pkuczynski.asc | gpg2 --import -
     curl -sSL https://get.rvm.io | bash -s stable
+    echo "source ~/.rvm/scripts/rvm" >> ~/.bashrc
+    source ~/.rvm/scripts/rvm
+    rvm install 3.3.8
+    rvm use 3.3.8 --default
     
     wget -O /.config/rvm/rvm.sh https://get.rvm.io
     cd /.config/rvm
