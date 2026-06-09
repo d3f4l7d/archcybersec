@@ -162,7 +162,7 @@ else
 fi
 
 
-if [ ! -e "~/.config/metasploit-framework/msfconsole" ]; then
+if [ ! -f "~/.config/metasploit-framework/msfconsole" ]; then
 
     echo
     echo " __  __ ____  _____ "
