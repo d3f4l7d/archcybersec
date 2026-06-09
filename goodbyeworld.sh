@@ -160,8 +160,8 @@ fi
 
 
 if [ -e ~/.config/metasploit-framework/msfconsole ]; then
-    echo "Did you replaced <ownername>, ownername, <dbname>, dbname, and <ownerpasswd> in postgres section beforehand? (y/N): "
-    if read -p; then
+    read -p "Did you replaced <ownername>, ownername, <dbname>, dbname, and <ownerpasswd> in postgres section beforehand? (y/n): " response
+    if [ $response == "y" ]; then
         echo
         echo " __  __ ____  _____ "
         echo "|  \/  / ___||  ___|"
