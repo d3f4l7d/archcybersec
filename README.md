@@ -28,8 +28,10 @@ This repository will give you another "lazy" way to install some fundamental pro
 9. metasploit framework (w/ rvm && postgresql)
 
 ## Usage
+
 > [!WARNING]
 > Replace ownername, dbname, and ownerpasswd in MSF, postgres section beforehand.
+
 Just execute like the below.
 ```
 ./goodbyeworld.sh 2>&1 | tee goodbyeworld_stdouterr.txt
