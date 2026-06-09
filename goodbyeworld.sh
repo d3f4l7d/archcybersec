@@ -159,7 +159,7 @@ else
 fi
 
 
-if [ -e ~/.config/metasploit-framework/msfconsole ]; then
+if [ ! -e ~/.config/metasploit-framework/msfconsole ]; then
     read -p "Did you replaced <ownername>, ownername, <dbname>, dbname, and <ownerpasswd> in postgres section beforehand? (y/n): " response
     if [ $response == "y" ]; then
         echo
@@ -217,6 +217,7 @@ if [ -e ~/.config/metasploit-framework/msfconsole ]; then
         echo "autoinstall of metasploit -- DONE"
     else
         echo "Replace <ownername>, ownername, <dbname>, dbname, and <ownerpasswd> in postgres section beforehand."
+        echo "via 'vim ~/.config/d3f4l7d/archcybersec/goodbyeworld.sh'"
         echo "Then rerun this code."
         exit
     fi
