@@ -45,13 +45,10 @@ WOLF will install an entire librewolf browser on your system.
 > WOLF process will take 1-2.5hrs for its compiling depends on your connection quality.
 
 ### --- Usage of msfconsole ---
-Move cd to msf dir.
+
+Just execute like the below.
 ```
-cd ~/.config/metasploit-framework/
-```
-And then, execute like the below.
-```
-./msfconsole
+msfconsole
 ```
 Now, you entered msfconsole.
 To connect postgres to msf, Check status at first.
