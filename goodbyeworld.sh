@@ -31,8 +31,7 @@ echo
 sudo pacman -Syuu
 
 
-if ! command -v ufw &> /dev/null
-then
+if ! command -v ufw &> /dev/null; then
     echo
     echo " _____ ___ ____  _____ "
     echo "|  ___|_ _|  _ \| ____|"
@@ -95,8 +94,7 @@ else
 fi
 
 
-if ! command -v tshark &> /dev/null
-then
+if ! command -v tshark &> /dev/null; then
     echo
     echo " ____  _   _    _    ____  _  __"
     echo "/ ___|| | | |  / \  |  _ \| |/ /"
@@ -130,8 +128,7 @@ else
 fi
 
 
-if ! command -v aircrack-ng &> /dev/null
-then
+if ! command -v aircrack-ng &> /dev/null; then
     echo
     echo "    _    ___ ____  "
     echo "   / \  |_ _|  _ \ "
@@ -162,8 +159,7 @@ else
 fi
 
 
-if [ -e ~/.config/metasploit-framework/msfconsole ]
-then
+if [ ! -e ~/.config/metasploit-framework/msfconsole ]; then
     echo
     echo " __  __ ____  _____ "
     echo "|  \/  / ___||  ___|"
@@ -174,7 +170,6 @@ then
 
     if [ ! -e ~/.rvm ]; then
         echo "rvm not found. Install rvm"
-        exit
         sudo pacman -S --noconfirm ruby ruby-rdoc postgresql
         curl -sSL https://rvm.io/pkuczynski.asc | gpg2 --import -
         curl -sSL https://get.rvm.io | bash -s stable
@@ -187,7 +182,6 @@ then
     fi
     if [ ! -e ~/.config/metasploit-framework/config/database.yml ]; then
         echo "postgres config file not found. Configure postgres"
-        exit
         sudo chown -R postgres:postgres /var/lib/postgres/
         sudo -Hiu postgres initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'
         sudo systemctl start postgresql
