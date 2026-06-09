@@ -229,6 +229,28 @@ else
 fi
 
 
+if [ ! -e ~/.config/thc-hydra/hydra ]; then
+    echo
+    echo " _____ _   _  ____ "
+    echo "|_   _| | | |/ ___|"
+    echo "  | | | |_| | |    "
+    echo "  | | |  _  | |___ "
+    echo "  |_| |_| |_|\____|"
+    echo
+
+    git clone https://github.com/vanhauser-thc/thc-hydra.git ~/.config/thc-hydra/
+    cd ~/.config/thc-hydra/
+    ./configure
+    make
+    sudo make install
+    hydra -h
+    
+    echo "autoinstall of hydra -- DONE"
+else
+    echo "hydra is already installed. Skip THC process..."
+fi
+
+
 echo
 echo " ____  _         _                                        "
 echo "/ ___|(_) __   _(_)___   _ __   __ _  ___ ___ _ __ ___    "
