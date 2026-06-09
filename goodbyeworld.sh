@@ -159,7 +159,7 @@ else
 fi
 
 
-if [ ! -e ~/.config/metasploit-framework/msfconsole ]; then
+if [ -e ~/.config/metasploit-framework/msfconsole ]; then
     read -p "Did you replaced <ownername>, ownername, <dbname>, dbname, and <ownerpasswd> in postgres section beforehand? (y/n): " response
     if [ "$response" == "y" || "$response" == "yes" ]; then
         echo
