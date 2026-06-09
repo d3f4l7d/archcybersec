@@ -161,7 +161,7 @@ fi
 
 if [ -e ~/.config/metasploit-framework/msfconsole ]; then
     echo "Did you replaced <ownername>, ownername, <dbname>, dbname, and <ownerpasswd> in postgres section beforehand? (y/N): "
-    if read -q; then
+    if read -p; then
         echo
         echo " __  __ ____  _____ "
         echo "|  \/  / ___||  ___|"
