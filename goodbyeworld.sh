@@ -172,9 +172,6 @@ then
     echo "|_|  |_|____/|_|    "
     echo
     
-    echo "Currently, this section is under development. skipped for now"
-    exit
-    
     sudo pacman -S --noconfirm ruby ruby-rdoc postgresql
     curl -sSL https://rvm.io/pkuczynski.asc | gpg2 --import -
     curl -sSL https://get.rvm.io | bash -s stable
@@ -204,11 +201,9 @@ then
     echo ' timeout: 3' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
     sudo sh -c "echo export MSF_DATABASE_CONFIG=~/.config/metasploit-framework/config/database.yml >> /etc/profile"
     source /etc/profile
-
-    
-    sudo chown -R $USER:users /opt/metasploit
+    sudo chown -R $USER:users ~/.config/metasploit-framework/
     ./msfconsole
-    msfconsole -h
+    
     echo "autoinstall of metasploit -- DONE"
 else
     echo "metasploit is already installed. Skip MSF process..."
