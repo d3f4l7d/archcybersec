@@ -25,7 +25,7 @@ This repository will give you another "lazy" way to install some fundamental pro
 6. wireshark-cli
 7. john the ripper
 8. aircrack-ng (w/ rtw88 && rtw89 wi-fi drivers)
-9. metasploit framework
+9. metasploit framework (w/ rvm && postgresql && Armitage)
 
 ## Usage
 Just execute like the below.
