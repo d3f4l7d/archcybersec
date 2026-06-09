@@ -58,7 +58,7 @@ db_status
 ```
 If no connection like ```[*] postgresql selected, no connection```, create connection like the below.
 ```
-db_connect <ownername>:<userpasswd>@127.0.0.1:5432/<dbname>
+db_connect <ownername>:<ownerpasswd>@127.0.0.1:5432/<dbname>
 ```
 Now, you'll see ```[*] Connected to <dbname>. Connection type: postgresql. Connection name local_db_service```.
 
