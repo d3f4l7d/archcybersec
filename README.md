@@ -29,7 +29,7 @@ This repository will give you another "lazy" way to install some fundamental pro
 
 ## Usage
 > [!WARNING]
-> Replace <ownername>, ownername, <dbname>, dbname, and <ownerpasswd> in MSF, postgres section beforehand.
+> Replace ownername, dbname, and ownerpasswd in MSF, postgres section beforehand.
 Just execute like the below.
 ```
 ./goodbyeworld.sh 2>&1 | tee goodbyeworld_stdouterr.txt
