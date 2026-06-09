@@ -206,6 +206,7 @@ if [ ! -e ~/.config/metasploit-framework/msfconsole ]; then
             echo ' port: 5432' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
             echo ' pool: 75' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
             echo ' timeout: 3' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
+            echo ' export PATH="$HOME/.config/metasploit-framework:$PATH"' | sudo tee -a ~/.zshrc
             sudo sh -c "echo export MSF_DATABASE_CONFIG=~/.config/metasploit-framework/config/database.yml >> /etc/profile"
             echo "source /etc/profile"
             echo "sudo chown -R $USER:users ~/.config/metasploit-framework/"
