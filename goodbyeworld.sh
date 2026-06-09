@@ -162,8 +162,8 @@ else
 fi
 
 
-if [ ! -e "~/.config/metasploit-framework/msfconsole" ]; then
-
+if [ ! -e ~/.config/metasploit-framework/msfconsole ]
+then
     echo
     echo " __  __ ____  _____ "
     echo "|  \/  / ___||  ___|"
@@ -172,7 +172,7 @@ if [ ! -e "~/.config/metasploit-framework/msfconsole" ]; then
     echo "|_|  |_|____/|_|    "
     echo
 
-    if [ ! -e "~/.rvm" ]; then
+    if [ ! -e ~/.rvm ]; then
         echo "rvm not found. Install rvm"
         exit
         sudo pacman -S --noconfirm ruby ruby-rdoc postgresql
@@ -185,7 +185,7 @@ if [ ! -e "~/.config/metasploit-framework/msfconsole" ]; then
         echo "And then reboot"
         exit
     fi
-    if [ ! -e "~/.config/metasploit-framework/config/database.yml" ]; then
+    if [ ! -e ~/.config/metasploit-framework/config/database.yml ]; then
         echo "postgres config file not found. Configure postgres"
         exit
         sudo chown -R postgres:postgres /var/lib/postgres/
