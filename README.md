@@ -26,6 +26,7 @@ This repository will give you another "lazy" way to install some fundamental pro
 | 07 | john the ripper |
 | 08 | aircrack-ng (w/ rtw88 && rtw89 wi-fi drivers) |
 | 09 | metasploit framework (w/ rvm && postgresql) |
+| 10 | THC-Hydra |
 
 ## Usage
 
