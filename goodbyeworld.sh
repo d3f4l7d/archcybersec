@@ -160,55 +160,62 @@ fi
 
 
 if [ ! -e ~/.config/metasploit-framework/msfconsole ]; then
-    echo
-    echo " __  __ ____  _____ "
-    echo "|  \/  / ___||  ___|"
-    echo "| |\/| \___ \| |_   "
-    echo "| |  | |___) |  _|  "
-    echo "|_|  |_|____/|_|    "
-    echo
+    read -p "Did you replaced <ownername>, ownername, <dbname>, dbname, and <ownerpasswd> in postgres section beforehand? (y/n): " response
+    if [ "$response" == "y" || "$response" == "yes" ]; then
+        echo
+        echo " __  __ ____  _____ "
+        echo "|  \/  / ___||  ___|"
+        echo "| |\/| \___ \| |_   "
+        echo "| |  | |___) |  _|  "
+        echo "|_|  |_|____/|_|    "
+        echo
 
-    if [ ! -e ~/.rvm ]; then
-        echo "rvm not found. Install rvm"
-        sudo pacman -S --noconfirm ruby ruby-rdoc postgresql
-        curl -sSL https://rvm.io/pkuczynski.asc | gpg2 --import -
-        curl -sSL https://get.rvm.io | bash -s stable
-        echo "source ~/.rvm/scripts/rvm" >> ~/.bashrc
-        echo "source ~/.rvm/scripts/rvm"
-        echo "rvm install 3.3.8"
-        echo "rvm use 3.3.8 --default"
-        echo "And then reboot"
+        if [ ! -e ~/.rvm ]; then
+            echo "rvm not found. Install rvm"
+            sudo pacman -S --noconfirm ruby ruby-rdoc postgresql
+            curl -sSL https://rvm.io/pkuczynski.asc | gpg2 --import -
+            curl -sSL https://get.rvm.io | bash -s stable
+            echo "source ~/.rvm/scripts/rvm" >> ~/.bashrc
+            echo "source ~/.rvm/scripts/rvm"
+            echo "rvm install 3.3.8"
+            echo "rvm use 3.3.8 --default"
+            echo "Type all the above, then rerun this code."
+            exit
+        fi
+        if [ ! -e ~/.config/metasploit-framework/config/database.yml ]; then
+            echo "postgres config file not found. Configure postgres"
+            sudo chown -R postgres:postgres /var/lib/postgres/
+            sudo -Hiu postgres initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'
+            sudo systemctl start postgresql
+            sudo systemctl enable postgresql
+            sudo -Hiu postgres createuser ownername -P -S -R -D
+            sudo -Hiu postgres createdb -O ownername dbname
+            git clone https://github.com/rapid7/metasploit-framework.git ~/.config/metasploit-framework/
+            cd ~/.config/metasploit-framework/
+            gem install wirble sqlite3 bundler
+            bundle install
+            sudo touch ~/.config/metasploit-framework/config/database.yml
+            echo 'production:' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
+            echo ' adapter: postgresql' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
+            echo ' database: <dbname>' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
+            echo ' username: <ownername>' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
+            echo ' password: <ownerpasswd>' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
+            echo ' host: 127.0.0.1' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
+            echo ' port: 5432' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
+            echo ' pool: 75' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
+            echo ' timeout: 3' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
+            sudo sh -c "echo export MSF_DATABASE_CONFIG=~/.config/metasploit-framework/config/database.yml >> /etc/profile"
+            echo "source /etc/profile"
+            echo "sudo chown -R $USER:users ~/.config/metasploit-framework/"
+            echo "Type all the above, then rerun this code."
+            exit
+        fi
+        echo "autoinstall of metasploit -- DONE"
+    else
+        echo "Replace <ownername>, ownername, <dbname>, dbname, and <ownerpasswd> in postgres section beforehand."
+        echo "Then rerun this code."
         exit
     fi
-    if [ ! -e ~/.config/metasploit-framework/config/database.yml ]; then
-        echo "postgres config file not found. Configure postgres"
-        sudo chown -R postgres:postgres /var/lib/postgres/
-        sudo -Hiu postgres initdb --locale en_US.UTF-8 -E UTF8 -D '/var/lib/postgres/data'
-        sudo systemctl start postgresql
-        sudo systemctl enable postgresql
-        sudo -Hiu postgres createuser ownername -P -S -R -D
-        sudo -Hiu postgres createdb -O ownername dbname
-        git clone https://github.com/rapid7/metasploit-framework.git ~/.config/metasploit-framework/
-        cd ~/.config/metasploit-framework/
-        gem install wirble sqlite3 bundler
-        bundle install
-        sudo touch ~/.config/metasploit-framework/config/database.yml
-        echo 'production:' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
-        echo ' adapter: postgresql' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
-        echo ' database: <dbname>' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
-        echo ' username: <ownername>' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
-        echo ' password: <passwd>' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
-        echo ' host: 127.0.0.1' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
-        echo ' port: 5432' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
-        echo ' pool: 75' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
-        echo ' timeout: 3' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
-        sudo sh -c "echo export MSF_DATABASE_CONFIG=~/.config/metasploit-framework/config/database.yml >> /etc/profile"
-        echo "source /etc/profile"
-        echo "sudo chown -R $USER:users ~/.config/metasploit-framework/"
-        echo "And then reboot"
-        exit
-    fi
-    echo "autoinstall of metasploit -- DONE"
 else
     echo "msf is already installed. Skip MSF process..."
 fi
