@@ -162,7 +162,7 @@ else
 fi
 
 
-if [ ! -f "~/.config/metasploit-framework/msfconsole" ]; then
+if [ ! -e "~/.config/metasploit-framework/msfconsole" ]; then
 
     echo
     echo " __  __ ____  _____ "
@@ -172,7 +172,7 @@ if [ ! -f "~/.config/metasploit-framework/msfconsole" ]; then
     echo "|_|  |_|____/|_|    "
     echo
 
-    if [ ! -d "~/.rvm" ]; then
+    if [ ! -e "~/.rvm" ]; then
         echo "rvm not found. Install rvm"
         exit
         sudo pacman -S --noconfirm ruby ruby-rdoc postgresql
@@ -185,7 +185,7 @@ if [ ! -f "~/.config/metasploit-framework/msfconsole" ]; then
         echo "And then reboot"
         exit
     fi
-    if [ ! -f "~/.config/metasploit-framework/config/database.yml" ]; then
+    if [ ! -e "~/.config/metasploit-framework/config/database.yml" ]; then
         echo "postgres config file not found. Configure postgres"
         exit
         sudo chown -R postgres:postgres /var/lib/postgres/
@@ -216,10 +216,7 @@ if [ ! -f "~/.config/metasploit-framework/msfconsole" ]; then
     fi
     echo "autoinstall of metasploit -- DONE"
 else
-    echo "msf is already installed. Test msfconsole..."
-    echo "'exit' to exit msfconsole"
-    cd ~/.config/metasploit-framework/
-    ./msfconsole
+    echo "msf is already installed. Skip MSF process..."
 fi
 
 
