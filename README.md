@@ -28,9 +28,15 @@ This repository will give you another "lazy" way to install some fundamental pro
 9. metasploit framework (w/ rvm && postgresql)
 
 ## Usage
+> [!WARNING]
+> Replace <ownername>, ownername, <dbname>, dbname, and <ownerpasswd> in MSF, postgres section beforehand.
 Just execute like the below.
 ```
 ./goodbyeworld.sh 2>&1 | tee goodbyeworld_stdouterr.txt
+```
+If you already modified MSF, postgres section correctlly, just execute like the below.
+```
+yes | ./goodbyeworld.sh 2>&1 | tee goodbyeworld_stdouterr.txt
 ```
 WOLF will install an entire librewolf browser on your system.
 > [!WARNING]
