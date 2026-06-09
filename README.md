@@ -36,7 +36,7 @@ WOLF will install an entire librewolf browser on your system.
 > [!WARNING]
 > WOLF process will take 1-2.5hrs for its compiling depends on your connection quality.
 
-### Usage of msfconsole
+### --- Usage of msfconsole ---
 Move cd to msf dir.
 ```
 cd ~/.config/metasploit-framework/
