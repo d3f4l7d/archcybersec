@@ -243,7 +243,6 @@ if [ ! -e ~/.config/thc-hydra/hydra ]; then
     ./configure
     make
     sudo make install
-    hydra -h
     
     echo "autoinstall of hydra -- DONE"
 else
