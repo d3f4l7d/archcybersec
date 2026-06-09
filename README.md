@@ -7,6 +7,14 @@ Of course, we're BLUE, but when it turns to be RED, or still BLUE...
 There're various IEEE 802.11 (Wi-Fi) WNIC (Wireless Network Interface Controller), but they're almost outdated devices such as Alfa AWUS036NHA, or built-in chip like Intel Wireless-AC 9560, and Intel Centrino Advanced-N 6235.
 So now, I'm only testing just a few 'modern' (2021.11~) models as shown below.
 
+| Model                                     | Description
+| ----------------------------------------- | ----------------------------------------------------------------------------------------
+| ### 1. Buffalo *WI-U3-1200AX2* [2021.11~] | RTL8852AU chipset, which has successfully deployed locally with [this driver](https://github.com/morrownr/rtw89).
+| ### 2. Buffalo *WI-U3-2400XE2* [2024.02~]
+> RTL8852CU chipset, which has successfully deployed locally with [this driver](https://github.com/morrownr/rtw89).
+| ### 3. Buffalo *WI-U3-866DHP* [2024.10~]
+> RTL8812BU chipset, which has successfully deployed locally with [this driver](https://github.com/lwfinger/rtw88).
+
 ### 1. Buffalo *WI-U3-1200AX2* [2021.11~]
 > RTL8852AU chipset, which has successfully deployed locally with [this driver](https://github.com/morrownr/rtw89).
 ### 2. Buffalo *WI-U3-2400XE2* [2024.02~]
