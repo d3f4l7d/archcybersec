@@ -181,6 +181,8 @@ if [ -e ~/.config/metasploit-framework/msfconsole ]; then
             echo "rvm use 3.3.8 --default"
             echo "Type all the above, then rerun this code."
             exit
+        else
+            echo "rvm is already installed. Skip this process..."
         fi
         if [ ! -e ~/.config/metasploit-framework/config/database.yml ]; then
             echo "postgres config file not found. Configure postgres"
@@ -209,6 +211,8 @@ if [ -e ~/.config/metasploit-framework/msfconsole ]; then
             echo "sudo chown -R $USER:users ~/.config/metasploit-framework/"
             echo "Type all the above, then rerun this code."
             exit
+        else
+            echo "postgres is already configured. Skip this process..."
         fi
         echo "autoinstall of metasploit -- DONE"
     else
