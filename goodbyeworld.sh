@@ -151,37 +151,6 @@ else
 fi
 
 
-if ! command -v aircrack-ng &> /dev/null; then
-    echo
-    echo "    _    ___ ____  "
-    echo "   / \  |_ _|  _ \ "
-    echo "  / _ \  | || |_) |"
-    echo " / ___ \ | ||  _ < "
-    echo "/_/   \_\___|_| \_|"
-    echo
-    
-    sudo pacman -S --noconfirm dkms bc
-    git clone https://aur.archlinux.org/rtw88-dkms-git.git ~/.config/air/rtw88-dkms-git/
-    cd ~/.config/air/rtw88-dkms-git/
-    makepkg -sirc
-    cd
-    sudo dkms status rtw88
-    
-    git clone https://github.com/morrownr/rtw89 ~/.config/air/rtw89/
-    cd ~/.config/air/rtw89/
-    sudo dkms install $PWD
-    sudo make install_fw
-    sudo cp rtw89.conf /etc/modprobe.d/
-    sudo dkms status rtw89
-
-    sudo pacman -S --noconfirm --needed libnl openssl ethtool util-linux zlib libpcap sqlite pcre2 hwloc cmocka hostapd tcpdump screen usbutils pciutils expect aircrack-ng
-    aircrack-ng --help
-    echo "autoinstall of aircrack-ng -- DONE"
-else
-    echo "aircrack-ng is already installed. Skip AIR process..."
-fi
-
-
 if [ ! -e ~/.config/thc-hydra/hydra ]; then
     echo
     echo " _____ _   _  ____ "
@@ -270,6 +239,37 @@ if [ ! -e ~/.config/metasploit-framework/msfconsole ]; then
     fi
 else
     echo "msf is already installed. Skip MSF process..."
+fi
+
+
+if ! command -v aircrack-ng &> /dev/null; then
+    echo
+    echo "    _    ___ ____  "
+    echo "   / \  |_ _|  _ \ "
+    echo "  / _ \  | || |_) |"
+    echo " / ___ \ | ||  _ < "
+    echo "/_/   \_\___|_| \_|"
+    echo
+    
+    sudo pacman -S --noconfirm dkms bc
+    git clone https://aur.archlinux.org/rtw88-dkms-git.git ~/.config/air/rtw88-dkms-git/
+    cd ~/.config/air/rtw88-dkms-git/
+    makepkg -sirc
+    cd
+    sudo dkms status rtw88
+    
+    git clone https://github.com/morrownr/rtw89 ~/.config/air/rtw89/
+    cd ~/.config/air/rtw89/
+    sudo dkms install $PWD
+    sudo make install_fw
+    sudo cp rtw89.conf /etc/modprobe.d/
+    sudo dkms status rtw89
+
+    sudo pacman -S --noconfirm --needed libnl openssl ethtool util-linux zlib libpcap sqlite pcre2 hwloc cmocka hostapd tcpdump screen usbutils pciutils expect aircrack-ng
+    aircrack-ng --help
+    echo "autoinstall of aircrack-ng -- DONE"
+else
+    echo "aircrack-ng is already installed. Skip AIR process..."
 fi
 
 
