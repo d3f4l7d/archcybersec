@@ -150,23 +150,6 @@ else
 fi
 
 
-if pacman -Q john &> /dev/null; then
-    echo "john is already installed. Skip JOHN process..."
-else
-    echo
-    echo "     _  ___  _   _ _   _ "
-    echo "    | |/ _ \| | | | \ | |"
-    echo " _  | | | | | |_| |  \| |"
-    echo "| |_| | |_| |  _  | |\  |"
-    echo " \___/ \___/|_| |_|_| \_|"
-    echo
-
-    sudo pacman -S --noconfirm john
-    john -h
-    echo "autoinstall of john -- DONE"
-fi
-
-
 if ! command -v aircrack-ng &> /dev/null; then
     echo
     echo "    _    ___ ____  "
