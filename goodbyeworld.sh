@@ -135,7 +135,7 @@ if ! command -v wireshark &> /dev/null; then
     echo "|____/|_| |_/_/   \_\_| \_\_|\_|"
     echo
 
-    sudo pacman -S --noconfirm geoip
+    sudo pacman -S --noconfirm --needed base-devel bcg729 brotli c-ares cmake git glib2 gnutls krb5 libcap libgcrypt libilbc libmaxminddb libnghttp2 libnghttp3 libnl libpcap libssh libxml2 lua lz4 minizip ninja pcre2 python qt6-base qt6-multimedia qt6-tools qt6-5compat sbc snappy spandsp speexdsp xxhash zlib zstd ccache docbook-xml docbook-xsl doxygen libxslt perl
     mkdir ~/.config/wireshark
     wget -O ~/.config/wireshark/wireshark-4.6.6.tar.xz https://2.na.dl.wireshark.org/src/wireshark-4.6.6.tar.xz
     cd ~/.config/wireshark/
@@ -174,7 +174,7 @@ if ! command -v aircrack-ng &> /dev/null; then
     sudo cp rtw89.conf /etc/modprobe.d/
     sudo dkms status rtw89
 
-    sudo pacman -S --noconfirm libnl openssl ethtool util-linux zlib libpcap sqlite pcre2 hwloc cmocka hostapd tcpdump screen usbutils pciutils expect aircrack-ng
+    sudo pacman -S --noconfirm --needed libnl openssl ethtool util-linux zlib libpcap sqlite pcre2 hwloc cmocka hostapd tcpdump screen usbutils pciutils expect aircrack-ng
     aircrack-ng --help
     echo "autoinstall of aircrack-ng -- DONE"
 else
