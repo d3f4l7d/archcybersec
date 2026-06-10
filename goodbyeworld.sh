@@ -136,6 +136,7 @@ if ! command -v wireshark &> /dev/null; then
     echo
 
     sudo pacman -S --noconfirm geoip
+    mkdir ~/.config/wireshark
     wget -O ~/.config/wireshark/wireshark-4.6.6.tar.xz https://2.na.dl.wireshark.org/src/wireshark-4.6.6.tar.xz
     cd ~/.config/wireshark/
     tar -xvzf wireshark-4.6.6.tar.xz
