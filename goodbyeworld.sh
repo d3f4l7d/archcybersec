@@ -144,7 +144,7 @@ if ! command -v wireshark &> /dev/null; then
     mkdir ~/.config/wireshark/wireshark-4.6.6/build
     cd ~/.config/wireshark/wireshark-4.6.6/build
     cmake ..
-    make install
+    sudo make install
     echo "autoinstall of wireshark -- DONE"
 else
     echo "wireshark is already installed. Skip SHARK process..."
