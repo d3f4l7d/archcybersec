@@ -126,7 +126,7 @@ else
 fi
 
 
-if ! command -v tshark &> /dev/null; then
+if ! command -v wireshark &> /dev/null; then
     echo
     echo " ____  _   _    _    ____  _  __"
     echo "/ ___|| | | |  / \  |  _ \| |/ /"
@@ -135,11 +135,17 @@ if ! command -v tshark &> /dev/null; then
     echo "|____/|_| |_/_/   \_\_| \_\_|\_|"
     echo
 
-    sudo pacman -S --noconfirm wireshark-cli
-    tshark --version
+    sudo pacman -S --noconfirm geoip
+    wget https://2.na.dl.wireshark.org/src/wireshark-4.6.6.tar.xz
+    tar xf wireshark-4.6.6.tar.xz
+    cd wireshark-4.6.6
+    ./configure
+    make
+    sudo make install
+    
     echo "autoinstall of tshark -- DONE"
 else
-    echo "tshark is already installed. Skip SHARK process..."
+    echo "wireshark is already installed. Skip SHARK process..."
 fi
 
 
