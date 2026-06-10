@@ -239,7 +239,7 @@ if [ ! -e ~/.config/metasploit-framework/msfconsole ]; then
             echo ' pool: 75' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
             echo ' timeout: 3' | sudo tee -a ~/.config/metasploit-framework/config/database.yml
             echo '# Add Metasploit-framework to PATH. Check PATH via echo $PATH.' | tee -a ~/.zshrc
-            echo 'export PATH="$HOME/.config/metasploit-framework:$PATH"' | tee -a ~/.zshrc
+            echo 'export PATH="$PATH:$HOME/.config/metasploit-framework"' | tee -a ~/.zshrc
             sudo sh -c "echo export MSF_DATABASE_CONFIG=~/.config/metasploit-framework/config/database.yml >> /etc/profile"
             echo "source ~/.zshrc"
             echo "source /etc/profile"
