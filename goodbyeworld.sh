@@ -141,11 +141,12 @@ if ! command -v wireshark &> /dev/null; then
     cd ~/.config/wireshark/
     tar -xf wireshark-4.6.6.tar.xz
     cd ~/.config/wireshark/wireshark-4.6.6
-    ./configure
-    make
-    sudo make install
+    mkdir ~/.config/wireshark/wireshark-4.6.6/build
+    cd ~/.config/wireshark/wireshark-4.6.6/build
+    cmake ..
+    make install
     
-    echo "autoinstall of tshark -- DONE"
+    echo "autoinstall of wireshark -- DONE"
 else
     echo "wireshark is already installed. Skip SHARK process..."
 fi
