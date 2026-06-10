@@ -31,20 +31,52 @@ echo
 sudo pacman -Syuu
 
 
-if ! command -v ufw &> /dev/null; then
+if ! command -v ssh &> /dev/null; then
     echo
-    echo " _____ ___ ____  _____ "
-    echo "|  ___|_ _|  _ \| ____|"
-    echo "| |_   | || |_) |  _|  "
-    echo "|  _|  | ||  _ <| |___ "
-    echo "|_|   |___|_| \_\_____|"
+    echo " ____ ____  _   _ "
+    echo "/ ___/ ___|| | | |"
+    echo "\___ \___ \| |_| |"
+    echo " ___) |__) |  _  |"
+    echo "|____/____/|_| |_|"
     echo
 
-    sudo pacman -S --noconfirm openssh ufw xorg
-    sudo systemctl start sshd && sudo systemctl start ufw
-    sudo systemctl enable sshd && sudo systemctl enable ufw
+    sudo pacman -S --noconfirm openssh
+    sudo systemctl start sshd
+    sudo systemctl enable sshd
 else
-    echo "ufw is already installed. Skip SEC process..."
+    echo "ssh is already installed. Skip SSH process..."
+fi
+
+
+if ! command -v ufw &> /dev/null; then
+    echo
+    echo " _   _ _______        __"
+    echo "| | | |  ___\ \      / /"
+    echo "| | | | |_   \ \ /\ / / "
+    echo "| |_| |  _|   \ V  V /  "
+    echo " \___/|_|      \_/\_/   "
+    echo
+
+    sudo pacman -S --noconfirm ufw
+    sudo systemctl start ufw
+    sudo systemctl enable ufw
+else
+    echo "ufw is already installed. Skip UFW process..."
+fi
+
+
+if pacman -Q xorg &> /dev/null; then
+    echo "xorg is already installed. Skip XORG process..."
+else
+    echo
+    echo "__  _____  ____   ____ "
+    echo "\ \/ / _ \|  _ \ / ___|"
+    echo " \  / | | | |_) | |  _ "
+    echo " /  \ |_| |  _ <| |_| |"
+    echo "/_/\_\___/|_| \_\\____|"
+    echo
+
+    sudo pacman -S --noconfirm xorg
 fi
 
 
