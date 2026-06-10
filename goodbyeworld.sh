@@ -144,6 +144,7 @@ if ! command -v wireshark &> /dev/null; then
     mkdir ~/.config/wireshark/wireshark-4.6.6/build
     cd ~/.config/wireshark/wireshark-4.6.6/build
     cmake ..
+    echo "This process will take almost ~20mins to finish"
     sudo make install
     echo "autoinstall of wireshark -- DONE"
 else
