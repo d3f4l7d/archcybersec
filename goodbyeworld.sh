@@ -139,7 +139,7 @@ if ! command -v wireshark &> /dev/null; then
     mkdir ~/.config/wireshark
     wget -O ~/.config/wireshark/wireshark-4.6.6.tar.xz https://2.na.dl.wireshark.org/src/wireshark-4.6.6.tar.xz
     cd ~/.config/wireshark/
-    tar -xvzf wireshark-4.6.6.tar.xz
+    tar -xf wireshark-4.6.6.tar.xz
     cd ~/.config/wireshark/wireshark-4.6.6
     ./configure
     make
