@@ -265,8 +265,8 @@ if ! command -v aircrack-ng &> /dev/null; then
     sudo cp rtw89.conf /etc/modprobe.d/
     sudo dkms status rtw89
 
-    sudo pacman -S --noconfirm --needed libnl openssl ethtool util-linux zlib libpcap sqlite pcre2 hwloc cmocka hostapd tcpdump screen usbutils pciutils expect aircrack-ng
-    aircrack-ng --help
+    sudo pacman -S --noconfirm --needed base-devel libnl openssl ethtool util-linux zlib libpcap sqlite pcre2 hwloc cmocka hostapd wpa_supplicant tcpdump screen iw usbutils pciutils expect
+    
     echo "autoinstall of aircrack-ng -- DONE"
 else
     echo "aircrack-ng is already installed. Skip AIR process..."
