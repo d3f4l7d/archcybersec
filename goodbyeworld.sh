@@ -80,6 +80,23 @@ else
 fi
 
 
+if pacman -Q nmap &> /dev/null; then
+    echo "nmap is already installed. Skip NMAP process..."
+else
+    echo
+    echo " _   _ __  __    _    ____  "
+    echo "| \ | |  \/  |  / \  |  _ \ "
+    echo "|  \| | |\/| | / _ \ | |_) |"
+    echo "| |\  | |  | |/ ___ \|  __/ "
+    echo "|_| \_|_|  |_/_/   \_\_|    "
+    echo
+
+    sudo pacman -S --noconfirm nmap
+    nmap --version
+    echo "autoinstall of nmap -- DONE"
+fi
+
+
 if pacman -Q librewolf &> /dev/null; then
     echo "librewolf is already installed. Skip WOLF process..."
 else
@@ -109,23 +126,6 @@ else
 fi
 
 
-if pacman -Q nmap &> /dev/null; then
-    echo "nmap is already installed. Skip NMAP process..."
-else
-    echo
-    echo " _   _ __  __    _    ____  "
-    echo "| \ | |  \/  |  / \  |  _ \ "
-    echo "|  \| | |\/| | / _ \ | |_) |"
-    echo "| |\  | |  | |/ ___ \|  __/ "
-    echo "|_| \_|_|  |_/_/   \_\_|    "
-    echo
-
-    sudo pacman -S --noconfirm nmap
-    nmap --version
-    echo "autoinstall of nmap -- DONE"
-fi
-
-
 if ! command -v wireshark &> /dev/null; then
     echo
     echo " ____  _   _    _    ____  _  __"
@@ -145,7 +145,6 @@ if ! command -v wireshark &> /dev/null; then
     cd ~/.config/wireshark/wireshark-4.6.6/build
     cmake ..
     make install
-    
     echo "autoinstall of wireshark -- DONE"
 else
     echo "wireshark is already installed. Skip SHARK process..."
@@ -180,6 +179,27 @@ if ! command -v aircrack-ng &> /dev/null; then
     echo "autoinstall of aircrack-ng -- DONE"
 else
     echo "aircrack-ng is already installed. Skip AIR process..."
+fi
+
+
+if [ ! -e ~/.config/thc-hydra/hydra ]; then
+    echo
+    echo " _____ _   _  ____ "
+    echo "|_   _| | | |/ ___|"
+    echo "  | | | |_| | |    "
+    echo "  | | |  _  | |___ "
+    echo "  |_| |_| |_|\____|"
+    echo
+
+    git clone https://github.com/vanhauser-thc/thc-hydra.git ~/.config/thc-hydra/
+    cd ~/.config/thc-hydra/
+    ./configure
+    make
+    sudo make install
+    
+    echo "autoinstall of hydra -- DONE"
+else
+    echo "hydra is already installed. Skip THC process..."
 fi
 
 
@@ -250,27 +270,6 @@ if [ ! -e ~/.config/metasploit-framework/msfconsole ]; then
     fi
 else
     echo "msf is already installed. Skip MSF process..."
-fi
-
-
-if [ ! -e ~/.config/thc-hydra/hydra ]; then
-    echo
-    echo " _____ _   _  ____ "
-    echo "|_   _| | | |/ ___|"
-    echo "  | | | |_| | |    "
-    echo "  | | |  _  | |___ "
-    echo "  |_| |_| |_|\____|"
-    echo
-
-    git clone https://github.com/vanhauser-thc/thc-hydra.git ~/.config/thc-hydra/
-    cd ~/.config/thc-hydra/
-    ./configure
-    make
-    sudo make install
-    
-    echo "autoinstall of hydra -- DONE"
-else
-    echo "hydra is already installed. Skip THC process..."
 fi
 
 
