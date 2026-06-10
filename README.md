@@ -20,12 +20,12 @@ This repository will give you another "lazy" way to install some fundamental pro
 | 01 | openssh |
 | 02 | ufw |
 | 03 | xorg (all reccommended) |
-| 04 | librewolf |
-| 05 | nmap |
-| 06 | wireshark |
-| 07 | aircrack-ng (w/ rtw88 && rtw89 wi-fi drivers) |
+| 04 | nmap |
+| 05 | librewolf |
+| 06 | wireshark (from source code) |
+| 07 | THC-Hydra |
 | 08 | metasploit framework (w/ rvm && postgresql) |
-| 09 | THC-Hydra |
+| 09 | aircrack-ng (w/ rtw88 && rtw89 wi-fi drivers) |
 
 ## Usage
 
