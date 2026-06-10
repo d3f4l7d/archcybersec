@@ -22,11 +22,10 @@ This repository will give you another "lazy" way to install some fundamental pro
 | 03 | xorg (all reccommended) |
 | 04 | librewolf |
 | 05 | nmap |
-| 06 | wireshark-cli |
-| 07 | john the ripper |
-| 08 | aircrack-ng (w/ rtw88 && rtw89 wi-fi drivers) |
-| 09 | metasploit framework (w/ rvm && postgresql) |
-| 10 | THC-Hydra |
+| 06 | wireshark |
+| 07 | aircrack-ng (w/ rtw88 && rtw89 wi-fi drivers) |
+| 08 | metasploit framework (w/ rvm && postgresql) |
+| 09 | THC-Hydra |
 
 ## Usage
 
