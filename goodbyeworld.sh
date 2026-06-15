@@ -146,6 +146,8 @@ if ! command -v wireshark &> /dev/null; then
     cmake ..
     echo "This process will take almost ~20mins to finish"
     sudo make install
+    sudo usermod -a -G wireshark $USER
+    sudo setcap cap_net_raw,cap_net_admin+eip /usr/local/bin/dumpcap
     echo "autoinstall of wireshark -- DONE"
 else
     echo "wireshark is already installed. Skip SHARK process..."
