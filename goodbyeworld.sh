@@ -126,7 +126,7 @@ else
 fi
 
 
-if ! command -v wireshark &> /dev/null; then
+if ! command -v wireplumber &> /dev/null; then
     echo
     echo " ____  _   _    _    ____  _  __"
     echo "/ ___|| | | |  / \  |  _ \| |/ /"
@@ -144,7 +144,7 @@ if ! command -v wireshark &> /dev/null; then
     mkdir ~/.config/wireshark/wireshark-4.6.6/build
     cd ~/.config/wireshark/wireshark-4.6.6/build
     cmake ..
-    echo "This process will take almost ~20mins to finish"
+    echo "This process will take almost ~25mins to finish"
     sudo make install
     sudo usermod -a -G wireshark $USER
     sudo setcap cap_net_raw,cap_net_admin+eip /usr/local/bin/dumpcap
