@@ -43,6 +43,8 @@ yes | ./goodbyeworld.sh 2>&1 | tee goodbyeworld_stdouterr.txt
 WOLF will install an entire librewolf browser on your system.
 > [!WARNING]
 > WOLF process will take 1-2.5hrs for its compiling depends on your connection quality.
+> [!WARNING]
+> SHARK process will take ~30mins for its compiling depends on your connection quality.
 
 ### --- Usage of msfconsole ---
 
