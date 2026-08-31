@@ -27,6 +27,13 @@ This repository will give you another "lazy" way to install some fundamental pro
 | 08 | metasploit framework (w/ rvm && postgresql) |
 | 09 | aircrack-ng (w/ rtw88 && rtw89 wi-fi drivers) |
 
+| #  | softwares in `printcontrolman.sh` |
+| -- | ------------------------------ |
+| 01 | cups |
+| 02 | cups-pdf |
+| 03 | cnrdrvcups-lb-bin |
+| 04 | epsonscan2 |
+
 ## Usage
 
 > [!WARNING]
