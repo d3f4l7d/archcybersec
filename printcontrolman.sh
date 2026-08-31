@@ -31,3 +31,16 @@ echo
 sudo pacman -Syuu
 
 
+if pacman -Q cups &> /dev/null; then
+    echo "cups is already installed. Skip XORG process..."
+else
+    echo
+    echo "  ____ _   _ ____  ____  "
+    echo " / ___| | | |  _ \/ ___| "
+    echo "| |   | | | | |_) \___ \ "
+    echo "| |___| |_| |  __/ ___) |"
+    echo " \____|\___/|_|   |____/ "
+    echo
+
+    sudo pacman -S --noconfirm cups cups-pdf
+fi
