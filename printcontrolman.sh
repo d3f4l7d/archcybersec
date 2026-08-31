@@ -32,7 +32,7 @@ sudo pacman -Syuu
 
 
 if pacman -Q cups &> /dev/null; then
-    echo "cups is already installed. Skip XORG process..."
+    echo "cups is already installed. Skip CUPS process..."
 else
     echo
     echo "  ____ _   _ ____  ____  "
