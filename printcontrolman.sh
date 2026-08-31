@@ -43,6 +43,11 @@ else
     echo
 
     sudo pacman -S --noconfirm cups cups-pdf
+    yay -S cnrdrvcups-lb-bin
+    lpinfo -m | grep -i '^CNRCUPS'
+    lpinfo -v
+    lpadmin -p Canon -E -v socket://<printer addr> -m CNRCUPS<printer model>.ppd
+    lpoptions -d Canon
 fi
 
 
