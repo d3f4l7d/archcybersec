@@ -46,6 +46,21 @@ else
 fi
 
 
+if pacman -Q epsonscan2 &> /dev/null; then
+    echo "cups is already installed. Skip EPSON process..."
+else
+    echo
+    echo " _____ ____  ____   ___  _   _ "
+    echo "| ____|  _ \/ ___| / _ \| \ | |"
+    echo "|  _| | |_) \___ \| | | |  \| |"
+    echo "| |___|  __/ ___) | |_| | |\  |"
+    echo "|_____|_|   |____/ \___/|_| \_|"
+    echo
+
+    yay -S --noconfirm epsonscan2
+fi
+
+
 echo
 echo "  ____                             _       _ _            _          "
 echo " / ___|   _ _ __ ___    _ __  _ __(_)_   _(_) | ___  __ _(_) ___     "
