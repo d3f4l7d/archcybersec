@@ -58,6 +58,7 @@ else
     echo
 
     yay -S --noconfirm epsonscan2
+    echo "Plug your scanner, then 'epsonscan2'"
 fi
 
 
