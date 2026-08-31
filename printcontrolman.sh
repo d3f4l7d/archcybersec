@@ -73,7 +73,11 @@ else
     echo "To print exaple.pdf w/ d3f4l7-favorite default, "
     echo "'cd ~/location/to/example/example.pdf'"
     echo "'lp -d <printer_name_you_like> -o sides=two-sided-long-edge -o media=A4 -o fit-to-page -o orientation-requested=3 example.pdf'"
-    
+    echo "For scheduled printing, 'lp -d <printer_name_you_like> -o sides=two-sided-long-edge -o media=A4 -o fit-to-page -o orientation-requested=3 -o job-hold-until=HH:MM (or indefinite) example.pdf'"
+    echo "To release held jobs, "
+    echo "lpstat -t"
+    echo "lp -i <job-id> -H resume"
+
 fi
 
 
