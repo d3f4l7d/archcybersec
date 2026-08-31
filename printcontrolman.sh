@@ -46,8 +46,8 @@ else
 fi
 
 
-if pacman -Q cups &> /dev/null; then
-    echo "cups is already installed. Skip CANON process..."
+if pacman -Q cnrdrvcups-lb-bin &> /dev/null; then
+    echo "cnrdrvcups-lb-bin is already installed. Skip CANON process..."
 else
     echo
     echo "  ____    _    _   _  ___  _   _ "
@@ -68,7 +68,7 @@ fi
 
 
 if pacman -Q epsonscan2 &> /dev/null; then
-    echo "cups is already installed. Skip EPSON process..."
+    echo "epsonscan2 is already installed. Skip EPSON process..."
 else
     echo
     echo " _____ ____  ____   ___  _   _ "
