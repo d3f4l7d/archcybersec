@@ -43,11 +43,27 @@ else
     echo
 
     sudo pacman -S --noconfirm cups cups-pdf
+fi
+
+
+if pacman -Q cups &> /dev/null; then
+    echo "cups is already installed. Skip CANON process..."
+else
+    echo
+    echo "  ____    _    _   _  ___  _   _ "
+    echo " / ___|  / \  | \ | |/ _ \| \ | |"
+    echo "| |     / _ \ |  \| | | | |  \| |"
+    echo "| |___ / ___ \| |\  | |_| | |\  |"
+    echo " \____/_/   \_\_| \_|\___/|_| \_|"
+    echo
+
     yay -S cnrdrvcups-lb-bin
+    echo "Find Proper .ppd"
     lpinfo -m | grep -i '^CNRCUPS'
+    echo "Find proper ip addr"
     lpinfo -v
-    lpadmin -p Canon -E -v socket://<printer addr> -m CNRCUPS<printer model>.ppd
-    lpoptions -d Canon
+    echo "'lpadmin -p <printer name you like> -E -v socket://<printer addr> -m CNRCUPS<printer model>.ppd'"
+    echo "'lpoptions -d <printer name you like>'"
 fi
 
 
