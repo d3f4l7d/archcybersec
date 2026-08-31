@@ -65,8 +65,11 @@ else
     lpinfo -m | grep -i '^CNRCUPS'
     echo "Find proper ip addr"
     lpinfo -v
-    echo "'lpadmin -p <printer name you like> -E -v socket://<printer addr> -m CNRCUPS<printer model>.ppd'"
-    echo "'lpoptions -d <printer name you like>'"
+    echo "'lpadmin -p <printer_name_you_like> -E -v socket://<printer.addr> -m CNRCUPS<printermodel>.ppd'"
+    echo "'lpoptions -d <printer_name_you_like>'"
+    echo "To check printer status, 'lpstat -t'"
+    echo "To remove printer from cups, 'lpadmin -x <printer_name_you_like>'"
+    
 fi
 
 
