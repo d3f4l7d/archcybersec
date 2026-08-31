@@ -43,6 +43,9 @@ else
     echo
 
     sudo pacman -S --noconfirm cups cups-pdf
+    sudo systenctl start cups.service
+    sudo systemctl enable cups.service
+    sudo systemctl status cups.service
 fi
 
 
