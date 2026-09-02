@@ -65,21 +65,34 @@ else
     lpinfo -m | grep -i '^CNRCUPS'
     echo "Find proper ip addr"
     lpinfo -v
-    echo "To register printer_name_you_like, 'lpadmin -p <printer_name_you_like> -E -v socket://<printer.addr> -m CNRCUPS<printermodel>.ppd'"
-    echo "To check printer setting, 'lpoptions -d <printer_name_you_like>'"
-    echo "To check printer status, 'lpstat -t'"
-    echo "To remove printer from cups, 'lpadmin -x <printer_name_you_like>'"
-    echo "To make user-default of two-sided-long-edge, 'lpadmin -p <printer_name_you_like> -o sides=two-sided-long-edge'"
-    echo "To print exaple.pdf w/ d3f4l7-favorite default, "
-    echo "'cd ~/location/to/example/example.pdf'"
-    echo "For portrait printing, "
+    echo "To register printer_name_you_like, "
+    echo "'lpadmin -p <printer_name_you_like> -E -v socket://<printer.addr> -m CNRCUPS<printermodel>.ppd'"
+    
+    echo "To check printer setting, "
+    echo "'lpoptions -d <printer_name_you_like>'"
+    
+    echo "To check printer status, "
+    echo "'lpstat -t'"
+    
+    echo "To remove printer from cups, "
+    echo "'lpadmin -x <printer_name_you_like>'"
+    
+    echo "To make user-default like two-sided-long-edge, "
+    echo "'lpadmin -p <printer_name_you_like> -o sides=two-sided-long-edge'"
+    
+    echo "To print exaple.pdf w/ d3f4l7-favorite portrait default, "
     echo "'lp -d <printer_name_you_like> -o sides=two-sided-long-edge -o media=A4 -o resolution=600dpi -o fit-to-page -o orientation-requested=3 -o job-priority=100 example.pdf'"
+
     echo "For landscape printing, "
     echo "'lp -d <printer_name_you_like> -o sides=two-sided-long-edge -o media=A4 -o resolution=600dpi -o fit-to-page -o orientation-requested=4 -o job-priority=100 example.pdf'"
-    echo "For scheduled printing, 'lp -d <printer_name_you_like> -o sides=two-sided-long-edge -o media=A4 -o fit-to-page -o orientation-requested=3 -o job-hold-until=HH:MM (or indefinite) example.pdf'"
+    
+    echo "For scheduled printing, "
+    echo "'lp -d <printer_name_you_like> -o sides=two-sided-long-edge -o media=A4 -o resolution=600dpi -o fit-to-page -o orientation-requested=3 -o job-hold-until=HH:MM (or indefinite) example.pdf'"
+    
     echo "To release held jobs, "
     echo "'lpstat -t'"
     echo "'lp -i <job-id> -H resume'"
+    
     echo "To cancel the job, "
     echo "'lpstat -t'"
     echo "'lprm <job-id>'"
