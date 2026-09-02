@@ -110,7 +110,7 @@ else
     echo "|_____|_|   |____/ \___/|_| \_|"
     echo
 
-    yay -S --noconfirm epsonscan2
+    yay -S epsonscan2
     echo "Plug your scanner, then 'epsonscan2'"
 fi
 
